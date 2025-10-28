@@ -1,4 +1,4 @@
 displayName = Sorcery Fight (A Jujutsu Kaisen Mod)
-author = harryys
+author = harrys
 version = 1.3.9.1
 modReferences = CalamityMod
