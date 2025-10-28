@@ -1,0 +1,95 @@
+Mods: {
+	sorceryFight: {
+		Projectiles: {
+			AmplifiedAuraProjectile.DisplayName: Усиленный Аураснаряд
+			MaximumAmplifiedAuraProjectile.DisplayName: Максимальный Усиленный Аураснаряд
+			ReverseCursedTechniqueAuraProjectile.DisplayName: Аура Обратной Проклятой Техники
+			DomainAmplificationProjectile.DisplayName: Аура Усиления Домена
+			HollowWickerBasketProjectile.DisplayName: Пустая Плетёная Корзина
+			IdleDeathGambleJackpotProjectile.DisplayName: Приз Случайной Смерти «Джекпот»
+			CrikySwordSlash.DisplayName: Рез Удочерённого Меча
+			InvertedSpearSlash.DisplayName: Рез Перевёрнутого Копья
+			ObliviousSwordSlash.DisplayName: Рез Забвенного Меча
+			ObliviousSwordProjectile.DisplayName: Снаряд Забвенного Меча
+			FallingBlossomEmotionProjectile.DisplayName: Снаряд Эмоции Падающего Цветка
+			FingerBearerBall.DisplayName: Шар Носителя Палец
+			IdleDeathGambleJackpotProjectileIII.DisplayName: Приз Случайной Смерти «Джекпот» III
+			InvertedSpearCharge.DisplayName: Заряд Перевёрнутого Копья
+			CleaveMS.DisplayName: Разруб MS
+			HollowPurpleCollision.DisplayName: Столкновение Пустоты Фиолетового Цвета
+		}
+
+		Configs: {
+			ClientConfig: {
+				DisplayName: Настройки Клиента
+
+				BlackFlashScreenEffects: {
+					Label: Эффекты Чёрной Вспышки на Экране
+					Tooltip: Включить или отключить мигание экрана при успешном применении чёрной вспышки.
+				}
+
+				DisableImpactFrames: {
+					Label: Отключить Кадры Удара
+					Tooltip: ""
+				}
+			}
+
+			SorceryFightServerConfig: {
+				DisplayName: Настройки Сервера Магической Битвы
+
+				LoreAccurateBlackFlash: {
+					Label: Точный по Лору Чёрная Вспышка
+					Tooltip: Включает урон с точным по лору эффектом чёрной вспышки. По лору она наносит урон, возведённый в квадрат, вместо обычного трёхкратного.
+				}
+
+				HollowNukeDamagesFriendlyNPCs: {
+					Label: Взрыв Пустоты Повреждает Дружелюбных NPC
+					Tooltip: Включает урон от взрыва пустоты по дружелюбным и городским NPC.
+				}
+			}
+
+			ServerConfig: {
+				DisplayName: Настройки Сервера
+
+				LoreAccurateBlackFlash: {
+					Label: Точный по Лору Чёрная Вспышка
+					Tooltip: ""
+				}
+
+				HollowNukeDamagesFriendlyNPCs: {
+					Label: Взрыв Пустоты Повреждает Дружелюбных Н П С
+					Tooltip: ""
+				}
+			}
+		}
+
+		DamageClasses.CursedTechniqueDamageClass.DisplayName: Проклятый Урон
+
+		Items: {
+			OSTDebug: {
+				DisplayName: Отладка OST
+				Tooltip: ""
+			}
+
+			StructureWand: {
+				DisplayName: Палочка Структуры
+				Tooltip: ""
+			}
+
+			IgnoreTileItem: {
+				DisplayName: Предмет Игнорирования Тайлов
+				Tooltip: ""
+			}
+
+			EnshroudedOneStatueItem: {
+				DisplayName: Статуя Закутанного
+				Tooltip: ""
+			}
+
+			LastChallengerStatueItem: {
+				DisplayName: Статуя Последнего Претендента
+				Tooltip: ""
+			}
+		}
+	}
+}

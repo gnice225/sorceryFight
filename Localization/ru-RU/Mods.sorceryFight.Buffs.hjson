@@ -1,0 +1,217 @@
+PlayerAttributes: {
+	SixEyes: {
+		DisplayName: Шесть Глаз
+		Description: Снижает затраты Проклятых Техник на {0}%.
+	}
+
+	ChallengersEye: {
+		DisplayName: Глаз Последнего Претендента
+		Description:
+			'''
+			Снижает затраты Проклятых Техник на {0}%.
+			[c/6D2673:Посвящается ehann]
+			'''
+	}
+
+	UniqueBodyStructure: {
+		DisplayName: Уникальное Строение Тела
+		Description:
+			'''
+			Снижает затраты Пассивных Техник на {0}%.
+			Позволяет использовать Проклятые Техники при активных Пассивных Техникаx.
+			'''
+	}
+
+	SukunasVessel: {
+		DisplayName: Сосуд
+		Description: Ты стал сосудом для могущественной и древней души.
+	}
+
+	BlessedByBlackSparksBuff: {
+		DisplayName: Благословлён Искрами Чёрного
+		Description:
+			'''
+			+{0}x увеличение урона Чёрной Вспышки.
+			{1} увеличение окна успешного срабатывания Чёрной Вспышки.
+			'''
+	}
+}
+
+CursedEnergyTraits: {
+	ExplosiveCursedEnergy: {
+		DisplayName: Взрывная Проклятая Энергия
+		Description:
+			'''
+			{0}% увеличение урона Проклятых Техник
+			{1}% увеличение затрат Проклятых Техник
+			'''
+	}
+
+	OverflowingCursedEnergy: {
+		DisplayName: Переполняющая Проклятая Энергия
+		Description: "{0}% увеличение максимума Проклятой Энергии, +{1} ПЕ/с реген"
+	}
+
+	SharpCursedEnergy: {
+		DisplayName: Острая Проклятая Энергия
+		Description:
+			'''
+			{0}% увеличение урона Проклятых Техник
+			{1}% шанс наложить Кровотечение при использовании Проклятых Техник
+			'''
+	}
+}
+
+BurntTechnique: {
+	DisplayName: Сожжённая Техника
+	Description:
+		'''
+		Твоя врождённая техника исчерпана!
+		Ты не можешь использовать Проклятые Техники.
+		'''
+}
+
+Infinity: {
+	DisplayName: Бесконечность
+	Description:
+		'''
+		Бесконечность — это сходимость
+		бесконечного ряда, где всё, что
+		приближается к бесконечности, замедляется
+		и никогда не достигает тебя.
+		'''
+	LockedDescription: Победи часть Ктулху, вырванную из него века назад.
+}
+
+AmplifiedAuraBuff: {
+	DisplayName: Усиленная Аура
+	Description:
+		'''
+		Окутанный усиленной Безграничной аурой,
+		ты получаешь прирост скорости и урона.
+		'''
+	// LockedDescription: Defeat the world's core that keeps ancient sprits sealed away.
+}
+
+MaximumAmplifiedAuraBuff: {
+	DisplayName: Максимальная Выходная Мощность: Усиленная Аура
+	Description:
+		'''
+		Окутанный усиленной Безграничной с максимальной Проклятой Энергией,
+		ты получаешь значительный прирост скорости и урона.
+		'''
+	// LockedDescription: Defeat the stone-faced ritualistic idol of the Lihzahrd tribe.
+}
+
+FallingBlossomEmotionBuff: {
+	DisplayName: Эмоция Падающего Цветка
+	Description:
+		'''
+		Антидоменная техника, передаваемая
+		среди Трёх Великих Кланов.
+		'''
+	// LockedDescription: Defeat the crazed cultist leader at the entrance of the dungeon.
+}
+
+DomainAmplificationBuff: {
+	DisplayName: Усиление Территории
+	Description:
+		'''
+		Простая техника, создающая барьер вокруг пользователя,
+		частично нивелирующий получаемый урон.
+		'''
+	// LockedDescription: Defeat the world's core that keeps ancient sprits sealed away.
+}
+
+HollowWickerBasketBuff: {
+	DisplayName: Пустая Плетёная Корзина
+	Description:
+		'''
+		Древняя техника. Окутывает пользователя корзиной Проклятой Энергии,
+		нейтрализуя любой получаемый урон.
+		'''
+	// LockedDescription: Defeat the stone-faced ritualistic idol of the Lihzahrd tribe.
+}
+
+IdleDeathGambleJackpotBuffI: {
+	DisplayName: Джекпот
+	Description: Ты выиграл джекпот. Теперь у тебя больше запасов Проклятой Энергии.
+}
+
+IdleDeathGambleJackpotBuffII: {
+	DisplayName: Джекпот
+	Description:
+		'''
+		Ты выиграл джекпот. Теперь у тебя ещё больше запасов Проклятой Энергии,
+		почти автоматически применяющей ОПТ.
+		'''
+}
+
+IdleDeathGambleJackpotBuffIII: {
+	DisplayName: Джекпот
+	Description: Ты выиграл джекпот. Теперь у тебя почти бесконечная Проклятая Энергия и ОПТ.
+}
+
+IdleDeathGambleBuff: {
+	DisplayName: Хорошая Попытка!
+	Description:
+		'''
+		В этот раз тебе не повезло с джекпотом,
+		но получаешь небольшой бафф, основанный на наивысшем числе броска!
+		'''
+}
+
+FlowState: {
+	DisplayName: Состояние Потока
+	Description:
+		'''
+		Ты вошёл в состояние потока.
+		Заполни индикатор Чёрная Вспышка,
+		чтобы нанести мощный урон последним ударом.
+		'''
+}
+
+KingOfCursesBuff: {
+	DisplayName: Режим Короля Проклятий
+	Description: Отдай мне своё тело, малыш.
+}
+
+BrainDamage: {
+	DisplayName: Повреждение Мозга
+	Description: Ты не можешь расширить свою территорию!
+}
+
+CursedEnergySickness: {
+	DisplayName: Болезнь Проклятой Энергии
+	Description: Урон от Проклятой Техники снижен на {0}%.
+}
+
+Bloodshed: {
+	DisplayName: Кровопролитие
+	Description:
+		'''
+		{0}% увеличение истинного урона в ближнем бою
+		{1}% увеличение скорости передвижения
+		+{2} к защите
+		'''
+}
+
+BloodshedCooldown: {
+	DisplayName: Перезарядка Кровопролития
+	Description: ""
+}
+
+Stats: {
+	CEConsumption: Потребление ПЕ:
+	BaseCEConsumption: Базовое Потребление ПЕ:
+	SpeedBoost: к скорости
+	DamageBoost: к урону
+	CannotUseCursedTechniques: Нельзя использовать Проклятые Техники пока это активно
+	UnlessUniqueBody: если у тебя нет уникального строения тела
+	DefenseBoost: к защите
+	DamageReduction: снижение урона
+	NullifiesDamage: нейтрализует получаемый урон
+	WhenStandingStill: когда стоишь на месте
+	InfinityBlockedObject: Блокированные объекты увеличивают затраты ПЕ в зависимости от их урона.
+	InfinityBossFight: Бесконечность потребляет в 3 раза больше ПЕ во время боссов.
+}

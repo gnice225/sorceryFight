@@ -1,0 +1,19 @@
+SukunasSkull: {
+	DisplayName: Череп Сукуны
+	Tooltip: Череп самого воплощённого Короля Проклятий, [c/8A0606:Рёмен Сукуна.]
+}
+
+CursedFragment: {
+	DisplayName: Проклятый Фрагмент
+	Tooltip: ""
+}
+
+InfusedCursedFragment: {
+	DisplayName: Проклятый Вплетённый Осколок
+	Tooltip: ""
+}
+
+LunarCursedFragment: {
+	DisplayName: Лунный Проклятый Осколок
+	Tooltip: ""
+}

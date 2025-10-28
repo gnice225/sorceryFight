@@ -1,0 +1,49 @@
+InnateTechniques: {
+	Limitless: {
+		DisplayName: Безграничная
+		Description: заполнитель
+	}
+
+	Shrine: {
+		DisplayName: Храм
+		Description: заполнитель
+	}
+
+	PrivatePureLoveTrain: {
+		DisplayName: Личный Чистый Поезд Любви
+		Description: заполнитель
+	}
+
+	Vessel: {
+		DisplayName: Сосуд
+		Description: заполнитель
+	}
+}
+
+DomainExpansionText: Расширение Территории:
+
+UnlockedRCT: {
+	// GeneralMessage: At the brink of death, you understand the nature of the Reverse Cursed Technique.
+	// KeyBindMessage: ": Hold down to use your cursed energy to heal yourself!"
+}
+
+InnateTechniqueUnlocker: {
+	Limitless: Сущность Бесконечности начинает течь по твоим венам.
+	Shrine: Бездна ада открывается, чтобы приветствовать своего потенциального правителя.
+	PrivatePureLoveTrain: Ты вдруг чувствуешь себя гораздо удачливее, чем раньше.
+	Vessel: Иностранец — древняя душа, по-видимому, запечатана в твоём теле. Душа чистого зла.
+
+	PlayerAttributes: {
+		SixEyes: Твои глаза начинают светиться ярко, теперь ты видишь поток даже самой слабой Проклятой Энергии в воздухе.
+		UniqueBodyStructure: Твоё тело болит и изменяется, началось перестроение.
+		BlessedByBlackSparks: Ты чувствуешь благословение чёрных искр.
+		FailedReroll: Похоже, твоя генетика не изменилась.
+	}
+
+	CursedEnergyTraits: {
+		ExplosiveCursedEnergy: Твоя проклятая энергия стала гораздо более взрывной.
+		SharpCursedEnergy: Твоя проклятая энергия стала гораздо острее.
+		OverflowingCursedEnergy: Ты чувствуешь переполнение проклятой энергии.
+		FailedReroll: Похоже, твоя проклятая энергия осталась прежней.
+	}
+}

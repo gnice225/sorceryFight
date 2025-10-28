@@ -1,0 +1,95 @@
+Mods: {
+	sorceryFight: {
+		Projectiles: {
+			AmplifiedAuraProjectile.DisplayName: Amplified Aura Projectile
+			MaximumAmplifiedAuraProjectile.DisplayName: Maximum Amplified Aura Projectile
+			ReverseCursedTechniqueAuraProjectile.DisplayName: Reverse Cursed Technique Aura Projectile
+			DomainAmplificationProjectile.DisplayName: Domain Amplification Projectile
+			HollowWickerBasketProjectile.DisplayName: Hollow Wicker Basket Projectile
+			IdleDeathGambleJackpotProjectile.DisplayName: Idle Death Gamble Jackpot Projectile
+			CrikySwordSlash.DisplayName: Criky Sword Slash
+			InvertedSpearSlash.DisplayName: Inverted Spear Slash
+			ObliviousSwordSlash.DisplayName: Oblivious Sword Slash
+			ObliviousSwordProjectile.DisplayName: Oblivious Sword Projectile
+			FallingBlossomEmotionProjectile.DisplayName: Falling Blossom Emotion Projectile
+			FingerBearerBall.DisplayName: Finger Bearer Ball
+			IdleDeathGambleJackpotProjectileIII.DisplayName: Idle Death Gamble Jackpot Projectile I I I
+			InvertedSpearCharge.DisplayName: Inverted Spear Charge
+			CleaveMS.DisplayName: Cleave M S
+			HollowPurpleCollision.DisplayName: Hollow Purple Collision
+		}
+
+		Configs: {
+			ClientConfig: {
+				DisplayName: Client Config
+
+				BlackFlashScreenEffects: {
+					Label: Black Flash Screen Effects
+					Tooltip: Toggle the screen flashing when landing a Black Flash.
+				}
+
+				DisableImpactFrames: {
+					Label: Disable Impact Frames
+					Tooltip: ""
+				}
+			}
+
+			SorceryFightServerConfig: {
+				DisplayName: Sorcery Fight Server Config
+
+				LoreAccurateBlackFlash: {
+					Label: Lore Accurate Black Flash
+					Tooltip: Toggles the damage output of a successful blackflash. Lore accurate Black Flashes deal squared damage, compared to the normal 3x damage.
+				}
+
+				HollowNukeDamagesFriendlyNPCs: {
+					Label: Hollow Nuke Damages Friendly NPCs
+					Tooltip: Toggles whether a Hollow Nuke deals damage to friendly/town NPCs.
+				}
+			}
+
+			ServerConfig: {
+				DisplayName: Server Config
+
+				LoreAccurateBlackFlash: {
+					Label: Lore Accurate Black Flash
+					Tooltip: ""
+				}
+
+				HollowNukeDamagesFriendlyNPCs: {
+					Label: Hollow Nuke Damages Friendly N P Cs
+					Tooltip: ""
+				}
+			}
+		}
+
+		DamageClasses.CursedTechniqueDamageClass.DisplayName: cursed damage
+
+		Items: {
+			OSTDebug: {
+				DisplayName: O S T Debug
+				Tooltip: ""
+			}
+
+			StructureWand: {
+				DisplayName: Structure Wand
+				Tooltip: ""
+			}
+
+			IgnoreTileItem: {
+				DisplayName: Ignore Tile Item
+				Tooltip: ""
+			}
+
+			EnshroudedOneStatueItem: {
+				DisplayName: Enshrouded One Statue Item
+				Tooltip: ""
+			}
+
+			LastChallengerStatueItem: {
+				DisplayName: Last Challenger Statue Item
+				Tooltip: ""
+			}
+		}
+	}
+}
