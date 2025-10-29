@@ -140,7 +140,7 @@ namespace sorceryFight.Content.CursedTechniques.Shrine
                 if (castTimer == (int)transitionTime)
                 {
                     texturePhase = 1;
-                    int index = CombatText.NewText(player.getRect(), textColor, "Divine Flame");
+                    int index = CombatText.NewText(player.getRect(), textColor, "Божественное пламя..");
                     Main.combatText[index].lifeTime = 60;
                     for (int i = 0; i < 3; i++)
                     {
@@ -153,7 +153,7 @@ namespace sorceryFight.Content.CursedTechniques.Shrine
 
                 if (castTimer == (int)totalCastTime - 10)
                 {
-                    int index = CombatText.NewText(player.getRect(), textColor, "Open.");
+                    int index = CombatText.NewText(player.getRect(), textColor, "Откройся.");
                     Main.combatText[index].lifeTime = 180;
                 }
 
