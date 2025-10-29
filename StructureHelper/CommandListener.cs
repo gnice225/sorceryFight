@@ -12,7 +12,7 @@ namespace sorceryFight.StructureHelper
         private static Dictionary<string, Action<string[]>> MasterCommands = new()
         {
             { "tp", TeleportPlayer },
-            { "structure", StructureHandler.ProcessCommand }
+            { "structure", StructureHandler.ProcessCommand },
         };
 
         private bool isChatting = false;
