@@ -68,10 +68,10 @@ namespace sorceryFight.Content.CursedTechniques.Limitless
             incantationsIndex = 0;
             incantations = new List<string>()
             {
-                "Nine Ropes.",
-                "Polarized Light.",
-                "Crow and Declaration.",
-                "Between Front and Back.",
+                "Девять принципов.",
+                "Поляризированный свет.",
+                "Ворона и пение шомё.",
+                "Разрыв между внутренним и внешним.",
             };
         }
 
