@@ -457,7 +457,7 @@ namespace sorceryFight.SFPlayer
             {
                 if (Player.HasBuff<BrainDamage>())
                 {
-                    int index = CombatText.NewText(Player.getRect(), Color.DarkRed, "You can't use this right now!");
+                    int index = CombatText.NewText(Player.getRect(), Color.DarkRed, "Ты не можешь использовать это сейчас!");
                     Main.combatText[index].lifeTime = 60;
                     return;
                 }
@@ -484,28 +484,76 @@ namespace sorceryFight.SFPlayer
                 {
                     inDomainAnimation = true;
 
+                    // Get domain radius from the technique
+                    float domainRadius = innateTechnique.DomainExpansion.SureHitRange;
+
+                    // Start cinematic cutscene (360 ticks = 6 seconds to match voice + pause)
+                    DomainExpansionCutscene.StartCutscene(Player.whoAmI, 360, domainRadius);
+
+                    // Send cutscene packet to other players in multiplayer
+                    if (Main.netMode == NetmodeID.MultiplayerClient)
+                    {
+                        ModPacket packet = ModContent.GetInstance<SorceryFight>().GetPacket();
+                        packet.Write((byte)MessageType.StartDomainCutscene);
+                        packet.Write(Player.whoAmI);
+                        packet.Write(360); // Duration (6 seconds to sync with voice + pause)
+                        packet.Write(domainRadius); // Domain radius
+                        packet.Send();
+                    }
+
                     // Play voice sound only for Unlimited Void
                     if (innateTechnique.DomainExpansion.InternalName == "UnlimitedVoid")
                     {
                         SoundEngine.PlaySound(SorceryFightSounds.UnlimitedVoidVoice, Player.Center);
                     }
                     
-                    int index = CombatText.NewText(Player.getRect(), Color.White, SFUtils.GetLocalization("Mods.sorceryFight.Misc.DomainExpansionText").Value);
-                    Main.combatText[index].lifeTime = 120;
+                    // Show "Domain Expansion:" text immediately
+                    string domainExpansionText = SFUtils.GetLocalization("Mods.sorceryFight.Misc.DomainExpansionText").Value;
+                    int index = CombatText.NewText(Player.getRect(), Color.White, domainExpansionText);
+                    Main.combatText[index].lifeTime = 150; // Show for 2.5 seconds
 
-                    // Show technique name after 2 seconds (120 ticks)
+                    // Send text to all other players (both client and server)
+                    if (Main.netMode != NetmodeID.SinglePlayer)
+                    {
+                        ModPacket packet = ModContent.GetInstance<SorceryFight>().GetPacket();
+                        packet.Write((byte)MessageType.ShowDomainText);
+                        packet.Write(Player.whoAmI);
+                        packet.Write(domainExpansionText);
+                        packet.Write(150); // Lifetime
+                        packet.Write((byte)Color.White.R);
+                        packet.Write((byte)Color.White.G);
+                        packet.Write((byte)Color.White.B);
+                        packet.Send(-1, Player.whoAmI); // Send to all except sender
+                    }
+
+                    // Show technique name after 2.5 seconds (150 ticks) to sync with voice line
                     TaskScheduler.Instance.AddDelayedTask(() =>
                     {
-                        int index = CombatText.NewText(Player.getRect(), Color.White, innateTechnique.DomainExpansion.DisplayName);
-                        Main.combatText[index].lifeTime = 120;
-                    }, 120);
+                        string techniqueName = innateTechnique.DomainExpansion.DisplayName;
+                        int index = CombatText.NewText(Player.getRect(), Color.White, techniqueName);
+                        Main.combatText[index].lifeTime = 180; // Show for 3 seconds
 
-                    // Expand domain after another 2 seconds (total 4 seconds, 240 ticks)
+                        // Send technique name to all other players (both client and server)
+                        if (Main.netMode != NetmodeID.SinglePlayer)
+                        {
+                            ModPacket packet = ModContent.GetInstance<SorceryFight>().GetPacket();
+                            packet.Write((byte)MessageType.ShowDomainText);
+                            packet.Write(Player.whoAmI);
+                            packet.Write(techniqueName);
+                            packet.Write(180); // Lifetime
+                            packet.Write((byte)Color.White.R);
+                            packet.Write((byte)Color.White.G);
+                            packet.Write((byte)Color.White.B);
+                            packet.Send(-1, Player.whoAmI); // Send to all except sender
+                        }
+                    }, 150); // 2.5 seconds to sync with "Бесконечная Пустота" in voice line
+
+                    // Expand domain after voice line finishes + 2-3 second pause (total ~6 seconds, 360 ticks)
                     TaskScheduler.Instance.AddDelayedTask(() =>
                     {
                         DomainExpansionController.ExpandDomain(Player.whoAmI, innateTechnique.DomainExpansion);
                         inDomainAnimation = false;
-                    }, 240);
+                    }, 360); // 6 seconds total (voice + 2-3 sec pause for dramatic effect)
                 }
             }
         }
@@ -532,7 +580,7 @@ namespace sorceryFight.SFPlayer
                 int index;
                 if (!new SimpleDomainFloating().Unlocked(this))
                 {
-                    index = CombatText.NewText(Player.getRect(), Color.DarkRed, "You haven't unlocked this yet!");
+                    index = CombatText.NewText(Player.getRect(), Color.DarkRed, "Вы еще не разблокировали это!");
                     Main.combatText[index].lifeTime = 60;
                     return;
                 }
@@ -540,13 +588,13 @@ namespace sorceryFight.SFPlayer
 
                 if (Player.HasBuff<BurntTechnique>())
                 {
-                    index = CombatText.NewText(Player.getRect(), Color.DarkRed, "Your technique is exhausted!");
+                    index = CombatText.NewText(Player.getRect(), Color.DarkRed, "Ваша техника исчерпана!");
                     Main.combatText[index].lifeTime = 180;
                     return;
                 }
 
                 DomainExpansionController.ExpandDomain(Player.whoAmI, new SimpleDomainFloating());
-                index = CombatText.NewText(Player.getRect(), Color.LightCyan, "New Shadow Style: Simple Domain");
+                index = CombatText.NewText(Player.getRect(), Color.LightCyan, "Новый стиль тени: Простая территория!");
                 Main.combatText[index].lifeTime = 60;
 
             }
