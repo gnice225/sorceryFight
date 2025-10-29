@@ -1,5 +1,7 @@
-# Sorcery Fight
+# Магическая битва
 
-Sorcery Fight is a content mod for Terraria that adds various items and custom abilities to make a more engaging PvP and PvE experience. The mod is made to be used  alongside with [Calamity Mod](https://github.com/CalamityTeam/CalamityModPublic), and will not work without it. The mod must be installed using [tModLoader](https://github.com/tModLoader/tModLoader) or through the Steam Workshop page.
+Sorcery Fight — это модификация для Terraria, добавляющая различные предметы и специальные способности для более захватывающих PvP и PvE-режимов. Мод предназначен для использования вместе с [Calamity Mod](https://github.com/CalamityTeam/CalamityModPublic) и не будет работать без него. Мод необходимо установить с помощью [tModLoader](https://github.com/tModLoader/tModLoader) или через страницу Мастерской Steam.
 
-The mod, its items, and custom abilities are heavily inspired/created by anime/manga *Jujutsu Kaisen* by Gege Akutami. The creator of this mod does not own the rights to the content that is from Jujutsu Kaisen. All rights belong to the owner. No Copyright Infringement intended.
+Мод, его предметы и специальные способности во многом вдохновлены/созданы по мотивам аниме/манги *Jujutsu Kaisen* Гэгэ Акутами. Создатель этого мода не владеет правами на контент из Jujutsu Kaisen. Все права принадлежат владельцу. Нарушение авторских прав не предполагается.
+
+* перевод может быть корректным не везде, в будущем будут улучшения. Данный форк включает помимо перевода изменения в геймплее мода, таких как увеличение размеров территорий, добавление озвучки и прочих улучшений. Спасибо создателям основного мода за работу!
