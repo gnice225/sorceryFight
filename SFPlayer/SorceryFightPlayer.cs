@@ -501,10 +501,14 @@ namespace sorceryFight.SFPlayer
                         packet.Send();
                     }
 
-                    // Play voice sound only for Unlimited Void
+                    // Play voice sound for specific domains
                     if (innateTechnique.DomainExpansion.InternalName == "UnlimitedVoid")
                     {
                         SoundEngine.PlaySound(SorceryFightSounds.UnlimitedVoidVoice, Player.Center);
+                    }
+                    else if (innateTechnique.DomainExpansion.InternalName == "MalevolentShrine")
+                    {
+                        SoundEngine.PlaySound(SorceryFightSounds.MalevolentShrineVoice, Player.Center);
                     }
                     
                     // Show "Domain Expansion:" text immediately
@@ -526,7 +530,17 @@ namespace sorceryFight.SFPlayer
                         packet.Send(-1, Player.whoAmI); // Send to all except sender
                     }
 
-                    // Show technique name after 2.5 seconds (150 ticks) to sync with voice line
+                    // Different timing for different domains
+                    int textDelay = 150; // Default: 2.5 seconds for Unlimited Void
+                    int expansionDelay = 360; // Default: 6 seconds for Unlimited Void
+                    
+                    if (innateTechnique.DomainExpansion.InternalName == "MalevolentShrine")
+                    {
+                        textDelay = 234; // 3.9 seconds to sync with "Гробница зла" in voice
+                        expansionDelay = 360; // 6 seconds total
+                    }
+
+                    // Show technique name after delay to sync with voice line
                     TaskScheduler.Instance.AddDelayedTask(() =>
                     {
                         string techniqueName = innateTechnique.DomainExpansion.DisplayName;
@@ -546,14 +560,14 @@ namespace sorceryFight.SFPlayer
                             packet.Write((byte)Color.White.B);
                             packet.Send(-1, Player.whoAmI); // Send to all except sender
                         }
-                    }, 150); // 2.5 seconds to sync with "Бесконечная Пустота" in voice line
+                    }, textDelay);
 
-                    // Expand domain after voice line finishes + 2-3 second pause (total ~6 seconds, 360 ticks)
+                    // Expand domain after voice line finishes
                     TaskScheduler.Instance.AddDelayedTask(() =>
                     {
                         DomainExpansionController.ExpandDomain(Player.whoAmI, innateTechnique.DomainExpansion);
                         inDomainAnimation = false;
-                    }, 360); // 6 seconds total (voice + 2-3 sec pause for dramatic effect)
+                    }, expansionDelay);
                 }
             }
         }
