@@ -39,7 +39,8 @@ namespace sorceryFight
 
         public static SoundStyle UnlimitedVoid;
         public static SoundStyle UnlimitedVoidVoice;
-        public static SoundStyle MalevolentShrine;
+        public static SoundStyle MalevolentShrineVoice;
+        public static SoundStyle MalevolentShrineBackgroundSound;
         public static SoundStyle Home;
         public static SoundStyle IdleDeathGambleOpening;
         public static SoundStyle IDGSlots;
@@ -85,7 +86,8 @@ namespace sorceryFight
 
             UnlimitedVoid = new("sorceryFight/Content/Sounds/DomainExpansions/UnlimitedVoid") { Volume = 1f };
             UnlimitedVoidVoice = new("sorceryFight/Content/Sounds/DomainExpansions/UnlimitedVoidVoice") { Volume = 1f };
-            MalevolentShrine = new("sorceryFight/Content/Sounds/DomainExpansions/MalevolentShrine") { Volume = 1f };
+            MalevolentShrineVoice = new("sorceryFight/Content/Sounds/DomainExpansions/MalevolentShrineVoice") { Volume = 1f };
+            MalevolentShrineBackgroundSound = new("sorceryFight/Content/Sounds/DomainExpansions/MalevolentShrineBackgroundSound") { Volume = 1f, IsLooped = true };
             Home = new("sorceryFight/Content/Sounds/DomainExpansions/Home") { Volume = 1f };
 
             IdleDeathGambleOpening = new("sorceryFight/Content/Sounds/DomainExpansions/IdleDeathGambleOpening") { Volume = 1f };
