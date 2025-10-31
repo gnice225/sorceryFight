@@ -208,7 +208,12 @@ namespace sorceryFight.Content.DomainExpansions
 
             de.owner = whoAmI;
             de.health = 1000;
-            SoundEngine.PlaySound(de.CastSound, de.center);
+            
+            // Only play cast sound if it's not empty/default
+            if (!string.IsNullOrEmpty(de.CastSound.SoundPath))
+            {
+                SoundEngine.PlaySound(de.CastSound, de.center);
+            }
 
             int id;
             if (de.ClosedDomain && de is not ISimpleDomain)
