@@ -18,7 +18,12 @@ namespace sorceryFight.Content.DomainExpansions.PlayerDomains
     {
         public override string InternalName => "MalevolentShrine";
 
-        public override SoundStyle CastSound => SorceryFightSounds.MalevolentShrine;
+        // ИСПРАВЛЕНО: Убрал CastSound полностью, возвращаем null через метод
+        public override SoundStyle CastSound => default; // Пустой SoundStyle
+        
+        private ActiveSound backgroundMusicSound;
+        private bool soundsStarted = false;
+        private float originalMusicVolume = 1f; // Store original music volume
 
         public override int Tier => 1;
 
@@ -43,6 +48,22 @@ namespace sorceryFight.Content.DomainExpansions.PlayerDomains
             worldSnippet.Capture(structureAnchor);
 
             StructureHandler.GenerateStructure(msStructure, structureAnchor);
+            
+            // Start screen darkening effect IMMEDIATELY when domain expands
+            MalevolentShrineScreenEffect.StartDarkening();
+            
+            // Store original music volume and disable game music immediately
+            if (Main.myPlayer == Main.player[owner].whoAmI)
+            {
+                originalMusicVolume = Main.musicVolume;
+                Main.musicVolume = 0f;
+                
+                // Start background music immediately when domain expands
+                var bgSlot = SoundEngine.PlaySound(SorceryFightSounds.MalevolentShrineBackgroundSound, Main.player[owner].Center);
+                SoundEngine.TryGetActiveSound(bgSlot, out backgroundMusicSound);
+                
+                soundsStarted = true;
+            }
         }
 
         public override void OnClose()
@@ -51,6 +72,23 @@ namespace sorceryFight.Content.DomainExpansions.PlayerDomains
 
             worldSnippet = null;
             structureAnchor = Point.Zero;
+            
+            // Stop screen darkening effect smoothly
+            MalevolentShrineScreenEffect.StopDarkening();
+            
+            // Restore original music volume and stop sounds
+            if (soundsStarted && Main.myPlayer == Main.player[owner].whoAmI)
+            {
+                // Restore game music
+                Main.musicVolume = originalMusicVolume;
+                
+                if (backgroundMusicSound != null && backgroundMusicSound.IsPlaying)
+                {
+                    backgroundMusicSound.Stop();
+                }
+                
+                soundsStarted = false;
+            }
         }
 
         public override void SureHitEffect(NPC npc)
@@ -78,6 +116,22 @@ namespace sorceryFight.Content.DomainExpansions.PlayerDomains
                     Vector2 randomOffset = new Vector2(Main.rand.NextFloat(-SureHitRange, SureHitRange), Main.rand.NextFloat(-SureHitRange, SureHitRange));
                     Projectile.NewProjectile(entitySource, Main.player[owner].Center + randomOffset, Vector2.Zero, type, 1, 0f, owner, Main.rand.NextFloat(0, 6));
                 }
+                
+                // Update sound position to follow player
+                if (soundsStarted)
+                {
+                    // Background music - restart if stopped
+                    if (backgroundMusicSound != null && backgroundMusicSound.IsPlaying)
+                    {
+                        backgroundMusicSound.Position = Main.player[owner].Center;
+                    }
+                    else if (backgroundMusicSound == null || !backgroundMusicSound.IsPlaying)
+                    {
+                        // Sound stopped, restart it
+                        var bgSlot = SoundEngine.PlaySound(SorceryFightSounds.MalevolentShrineBackgroundSound, Main.player[owner].Center);
+                        SoundEngine.TryGetActiveSound(bgSlot, out backgroundMusicSound);
+                    }
+                }
             }
 
             if (Main.ingameOptionsWindow)
@@ -91,7 +145,5 @@ namespace sorceryFight.Content.DomainExpansions.PlayerDomains
         {
             return sf.HasDefeatedBoss(ModContent.NPCType<DevourerofGodsHead>());
         }
-
-
     }
 }
