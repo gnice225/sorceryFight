@@ -58,7 +58,7 @@ namespace sorceryFight.Content.CursedTechniques.Limitless
             Projectile.width = 250;
             Projectile.height = 250;
             animating = false;
-            animScale = 2.5f;
+            animScale = 3f;
             hitbox = Projectile.Hitbox;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = -1;
@@ -203,7 +203,7 @@ namespace sorceryFight.Content.CursedTechniques.Limitless
             if (animating)
             {
                 animating = false;
-                animScale = 2.5f;
+                animScale = 3f;
                 Projectile.damage = (int)CalculateTrueDamage(player.GetModPlayer<SorceryFightPlayer>());
                 Projectile.Hitbox = hitbox;
                 Projectile.timeLeft = (int)LifeTime;
