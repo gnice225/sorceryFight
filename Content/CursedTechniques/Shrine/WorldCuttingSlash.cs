@@ -63,9 +63,9 @@ namespace sorceryFight.Content.CursedTechniques.Shrine
         {
             incantations = new List<string>()
             {
-                "Dragon Scales.",
-                "Repulsion.",
-                "Paired Falling Stars."
+                "Драконья Чешуя.",
+                "Отталкивание.",
+                "Парные Падающие Звезды."
             };
 
             if (Main.dedServ) return;
